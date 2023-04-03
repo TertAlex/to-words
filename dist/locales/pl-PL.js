@@ -4,8 +4,8 @@ class Locale {
     constructor() {
         this.config = {
             currency: {
-                name: 'Zloty',
-                plural: 'Zlotys',
+                name: 'Złoty',
+                plural: 'Złoty',
                 symbol: 'zł',
                 fractionalUnit: {
                     name: 'Grosz',
@@ -20,11 +20,11 @@ class Locale {
                 point: 'Punkt',
             },
             numberWordsMapping: [
-                { number: 1000000000000000, value: 'Quadrillion' },
+                { number: 1000000000000000, value: 'Kwadrylion' },
                 { number: 1000000000000, value: 'Trylion' },
                 { number: 1000000000, value: 'Miliard' },
                 { number: 1000000, value: 'Milion' },
-                { number: 1000, value: 'Thousand' },
+                { number: 1000, value: 'Tysiąć' },
                 { number: 100, value: 'Sto' },
                 { number: 90, value: 'Dziewięćdziesiąt' },
                 { number: 80, value: 'Osiemdziesiąt' },
@@ -43,7 +43,7 @@ class Locale {
                 { number: 13, value: 'Trzynaście' },
                 { number: 12, value: 'Dwanaście' },
                 { number: 11, value: 'Jedenaście' },
-                { number: 10, value: 'Ten' },
+                { number: 10, value: 'Dziesięć' },
                 { number: 9, value: 'Dziewięć' },
                 { number: 8, value: 'Osiem' },
                 { number: 7, value: 'Siedem' },
