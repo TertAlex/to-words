@@ -54,6 +54,6 @@ export default class Locale implements LocaleInterface {
       { number: 1, value: 'Jeden' },
       { number: 0, value: 'Zero' },
     ],
-    exactWordsMapping: [{ number: 100, value: 'Sto' }],
+    exactWordsMapping: [{ number: 100, value: 'Set' }],
   };
 }
