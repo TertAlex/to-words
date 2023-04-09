@@ -13,10 +13,10 @@ export default class Locale implements LocaleInterface {
       },
     },
     texts: {
-      and: 'Oraz',
-      minus: 'Minus',
-      only: 'Tylko',
-      point: 'Punkt',
+      and: 'oraz',
+      minus: 'minus',
+      only: 'tylko',
+      point: 'punkt',
     },
     numberWordsMapping: [
       { number: 1000000000000000, value: 'kwadrylion' },
