@@ -24,6 +24,9 @@ class Locale {
                 { number: 1000000000000, value: 'trylion' },
                 { number: 1000000000, value: 'miliard' },
                 { number: 1000000, value: 'milion' },
+                { number: 4000, value: 'tysiące' },
+                { number: 3000, value: 'tysiące' },
+                { number: 2000, value: 'tysiące' },
                 { number: 1000, value: 'tysiąć' },
                 { number: 900, value: 'dziewięćset' },
                 { number: 800, value: 'osiemset' },
@@ -64,6 +67,8 @@ class Locale {
                 { number: 0, value: 'zero' },
             ],
             namedLessThan1000: true,
+            pluralMark: 'y',
+            pluralWords: ['kwadrylion', 'trylion', 'miliard', 'milion', 'tysiąć'],
         };
     }
 }
