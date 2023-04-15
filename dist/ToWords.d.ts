@@ -11,6 +11,7 @@ export declare class ToWords {
     protected convertNumber(number: number): string[];
     protected convertCurrency(number: number, options?: ConverterOptions): string[];
     protected convertInternal(number: number): string[];
+    private getMatchValue;
     toFixed(number: number, precision?: number): number;
     isFloat(number: number | string): boolean;
     isValidNumber(number: number | string): boolean;

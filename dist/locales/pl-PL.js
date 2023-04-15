@@ -5,7 +5,7 @@ class Locale {
         this.config = {
             currency: {
                 name: 'Złoty',
-                plural: 'Złoty',
+                plural: 'Złotych',
                 symbol: 'zł',
                 fractionalUnit: {
                     name: 'Grosz',
@@ -20,17 +20,54 @@ class Locale {
                 point: 'punkt',
             },
             numberWordsMapping: [
-                { number: 1000000000000000, value: 'kwadrylion' },
-                { number: 1000000000000, value: 'trylion' },
-                { number: 1000000000, value: 'miliard' },
-                { number: 1000000, value: 'milion' },
-                { number: 4000, value: 'cztery tysiące' },
-                { number: 3000, value: 'trzy tysiące' },
-                { number: 2000, value: 'dwa tysiące' },
-                { number: 1000, value: 'tysiąć' },
+                {
+                    number: 1000000000000000,
+                    value: 'biliard',
+                    plural: [
+                        { from: 0, to: 1, value: 'biliardów' },
+                        { from: 2, to: 4, value: 'biliardy' },
+                        { from: 5, to: 20, value: 'biliardów' },
+                    ],
+                },
+                {
+                    number: 1000000000000,
+                    value: 'bilion',
+                    plural: [
+                        { from: 0, to: 1, value: 'bilionów' },
+                        { from: 2, to: 4, value: 'biliony' },
+                        { from: 5, to: 20, value: 'bilionów' },
+                    ],
+                },
+                {
+                    number: 1000000000,
+                    value: 'miliard',
+                    plural: [
+                        { from: 0, to: 1, value: 'miliardów' },
+                        { from: 2, to: 4, value: 'miliardy' },
+                        { from: 5, to: 20, value: 'miliardów' },
+                    ],
+                },
+                {
+                    number: 1000000,
+                    value: 'milion',
+                    plural: [
+                        { from: 0, to: 1, value: 'milionów' },
+                        { from: 2, to: 4, value: 'miliony' },
+                        { from: 5, to: 20, value: 'milionów' },
+                    ],
+                },
+                {
+                    number: 1000,
+                    value: 'tysiąc',
+                    plural: [
+                        { from: 0, to: 1, value: 'tysięcy' },
+                        { from: 2, to: 4, value: 'tysiące' },
+                        { from: 5, to: 20, value: 'tysięcy' },
+                    ],
+                },
                 { number: 900, value: 'dziewięćset' },
                 { number: 800, value: 'osiemset' },
-                { number: 700, value: 'siedemset ' },
+                { number: 700, value: 'siedemset' },
                 { number: 600, value: 'sześćset' },
                 { number: 500, value: 'pięćset' },
                 { number: 400, value: 'czterysta' },
@@ -67,8 +104,6 @@ class Locale {
                 { number: 0, value: 'zero' },
             ],
             namedLessThan1000: true,
-            pluralMark: 'y',
-            pluralWords: ['kwadrylion', 'trylion', 'miliard', 'milion', 'tysiąć'],
         };
     }
 }

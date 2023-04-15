@@ -244,7 +244,8 @@ export class ToWords {
 
     const quotient = Math.floor(number / match.number);
     const remainder = number % match.number;
-    let matchValue = match.value;
+
+    let matchValue = quotient === 1 ? match.value : this.getMatchValue(match, quotient);
     if (quotient > 1 && locale.config?.pluralWords?.find((word) => word === match.value) && locale.config?.pluralMark) {
       matchValue += locale.config.pluralMark;
     }
@@ -263,6 +264,24 @@ export class ToWords {
       words.push(...this.convertInternal(remainder));
     }
     return words;
+  }
+
+  private getMatchValue(match: NumberWordMap, quotient: number): string {
+    if (match.plural !== undefined) {
+      const lastElement = match.plural[match.plural.length - 1].to;
+      if (quotient <= lastElement) {
+        const pluralMapping = match.plural.find((x) => x.from <= quotient && quotient <= x.to);
+        if (pluralMapping !== undefined) {
+          return pluralMapping.value;
+        }
+      } else if (quotient > lastElement) {
+        const quotientLength = quotient.toString().length;
+        const newQuotient = quotient % Math.pow(10, quotientLength - 1);
+        return this.getMatchValue(match, newQuotient);
+      }
+    }
+
+    return match.value;
   }
 
   public toFixed(number: number, precision = 2): number {

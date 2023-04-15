@@ -26,9 +26,16 @@ export interface ConstructorOf<T> {
   new (...args: unknown[]): T;
 }
 
+export interface PluralMapping {
+  from: number;
+  to: number;
+  value: string;
+}
+
 export type NumberWordMap = {
   number: number;
   value: string;
+  plural?: PluralMapping[];
 };
 
 export type LocaleConfig = {
@@ -42,6 +49,7 @@ export type LocaleConfig = {
   numberWordsMapping: NumberWordMap[];
   exactWordsMapping?: NumberWordMap[];
   namedLessThan1000?: boolean;
+  namedLessThan?: number;
   splitWord?: string;
   ignoreZeroInDecimals?: boolean;
   decimalLengthWordMapping?: Record<number, string>;

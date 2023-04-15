@@ -54,7 +54,7 @@ const testIntegers = [
 
 describe('Test Integers with options = {}', () => {
   test.concurrent.each(testIntegers)('convert %d => %s', (input, expected) => {
-    expect(toWords.convert(input as number)).toBe(expected);
+    expect(toWords.convert(input as number)).toBe((expected as string).toLowerCase());
   });
 });
 
